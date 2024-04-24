@@ -13,7 +13,9 @@
 
             <label for="parol">parol:</label>
             <input id="parol" type="password" name="parol">
-
+                {% if xato %}
+                {{ xato }}
+            {% endif %}
             <button type="submit"> Login  </button>
         </form>
         <p>

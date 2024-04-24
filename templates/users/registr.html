@@ -8,23 +8,21 @@
         <h1><span class="text-primary">KIRISHISH</span> </h1>
         <p>ILTMOS QUYIDAGI FORMANI TO'LDIRING</p>
 
-        <form>
-          <div class="form-group">
-            <label for="ism"> ism </label>
-            <input type="text" id="name" name="name" >
+       <form action="{{ url_for('registr') }}" method="post">
+                <label for="ism">Ismingiz:</label>
+                <input id="ism" name="ism" type="text" required>
 
-            <label for="familiya"> familiya </label>
-            <input id="familiya" type="text" id="fullname" name="fullname" >
+                <label for="familiya">Familiyangiz:</label>
+                <input id="familiya" name="familiya" type="text" required>
 
-            <label for="login">login </label>
-            <input type="text" id="login" name="login" >
+                <label for="login">login</label>
+                <input id="login" name="login" type="text" required>
 
-            <label for="parol"> parol </label>
-            <input type="password" id="parol" name="parol" >
-          </div>
+                <label for="parol">parol</label>
+                <input id="parol" name="parol" type="password" required>
 
-          <button class="btn">YUBORISH</button>
-        </form>
+                <button type="submit"> Ro'yxatdan o'tish </button>
+            </form>
       </div>
     </section>
 

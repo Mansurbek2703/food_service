@@ -28,8 +28,19 @@
                         <li><a href="{{ url_for('menulist')}}">Menu</a></li>
                         <li><a href="{{ url_for('haqida')}}">about</a></li>
                         <li><a href="#services">services</a></li>
+                         {%  if session['username'] %}
+                        <li class="dropdown">
+                                    <button class="dropbtn">{{ session['username'][3] }}$</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">edit</a>
+                                        <hr>
+                                        <a href="{{url_for('logout')}}">logout</a>
+                                    </div>
+                                </li>
+                        {% else %}
                         <li><a href="{{ url_for('login')}}">login</a></li>
-                        <li><a href="{{url_for('savatcha')}}" class="btn book-btn ">zakaz</a></li>
+                        {% endif %}
+                        <li><a href="{{url_for('savatcha')}}" class="btn book-btn ">savatcha</a></li>
                     </ul>
                 </div>
             </nav>

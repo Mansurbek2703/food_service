@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 
 
@@ -13,10 +13,6 @@
 
 <div class="container">
     <table>
-
-
-
-
         <thead>
         <tr>
             <th> №</th>
@@ -26,6 +22,7 @@
             <th> tarifi</th>
             <th> rasmi</th>
             <th> soni</th>
+            <th>o`chirish</th>
         </tr>
         </thead>
         <tbody>
@@ -36,8 +33,9 @@
             <td> {{ i[4] }}</td>
             <td> {{ i[1] }}</td>
             <td> {{ i[2] }}</td>
-            <td><img src="{{ url_for('static', filename='media-files/'+ i[3])}}" alt="{{ i[3] }}"></td>
-            <td> 2</td>
+            <td><img src="{{ url_for('static', filename='media-files/'+ i[3] )}}" alt="{{ i[3] }}"></td>
+             <td> {{ i[5] }}</td>
+            <td><a href="{{ url_for('delete_mahsulot', id=i[6])  }}"> delete </a></td>
         </tr>
         {% endfor %}
         </tbody>

@@ -45,34 +45,52 @@ class Database:
             where ovqat_miqdorlari.ovqat_id={id}"""
             return self.ishlatish(sql, fetchall=True)
 
-    def savatcha(self):
-        sql="""
+    def savatcha(self,id):
+        sql=f"""
         SELECT food.nomi,
             ovqat_miqdorlari.narxi, 
             ovqat_miqdorlari.tarifi, 
             ovqat_miqdorlari.rasmi,
             miqdor.turi,
-            savatcha.soni
+            savatcha.soni,
+            savatcha.id
         FROM miqdor
         INNER JOIN ovqat_miqdorlari ON miqdor.id = ovqat_miqdorlari.miqdor_id
         INNER JOIN savatcha ON ovqat_miqdorlari.id = savatcha.ovqat_id
         INNER JOIN food ON ovqat_miqdorlari.ovqat_id = food.id
+        where savatcha.user_id={id}
         """
         return self.ishlatish(sql, fetchall=True)
 
-    def zakazqushish(self,ism,fam,tel,
-
-                     ):
+    def addsavat(self,userid,ovqatid, zakazid, soni):
         try:
             sql=f"""
-            insert into zakazlar(ism, familiya,tel_raqam)
-            values('{ism}', '{fam}','{tel}',')
+            insert into savatcha(user_id,ovqat_id, zakaz_id, soni)
+            values( {userid}, {ovqatid}, {zakazid},{soni})
             """
             self.ishlatish(sql , commit=True)
         except:
             print("xato bo'ldi")
+    def adduser(self, ism, familiya, login, parol):
+        sql = f"""
+            insert into foydalanuvchilar(ism, familiya, login, parol)
+            values ('{ism}', '{familiya}', '{login}', '{parol}')
+        """
+        self.ishlatish(sql, commit=True)
 
+    def check_user(self, login, parol):
+        sql = f"""
+            SELECT * 
+            FROM foydalanuvchilar
+            WHERE login='{login}' AND parol='{parol}'
+        """
+        return self.ishlatish(sql, fetchone=True)
 
+    def delmahsulot(self,id):
+        sql=f"""
+        delete from savatcha where id={id}
+        """
+        self.ishlatish(sql,commit=True)
 obj=Database()
 #a=obj.get_info()
 #for i in a:
