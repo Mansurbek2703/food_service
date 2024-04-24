@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} My Website {% endblock %} </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    {% block style %}
+
+    {% endblock %}
+</head>
+<body>
+<header>
+        <div class="container">
+            <nav class="nav d-flex">
+                <a href="/" >
+                    <img class="radiusi" src="{{ url_for('static',filename='images/logotip.png') }}" >
+                </a>
+                <!-- Toggle bar -->
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navigation-bar">
+                    <ul>
+                        <li><a href="{{ url_for('home')}}" class="active">Home</a></li>
+                        <li><a href="{{ url_for('menulist')}}">Menu</a></li>
+                        <li><a href="{{ url_for('haqida')}}">about</a></li>
+                        <li><a href="#services">services</a></li>
+                        <li><a href="{{ url_for('login')}}">login</a></li>
+                        <li><a href="{{url_for('savatcha')}}" class="btn book-btn ">zakaz</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+            {% block content %}
+
+        {% endblock %}
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
+<script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+</html>

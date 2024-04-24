@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content  %}
+
+        <!-- Home  -->
+        <section class="home" id="home">
+            <div class="container">
+                <div class="home-wrapper d-grid">
+                    <div class="col-left">
+                        <h3>Choyxona</h3>
+                        <h1>Ovqat yetkazib <br>berish xizmati</h1>
+
+                        <p>Ishu yerldarda nerdadir aqlli gaplar bo'lishi garak adi </p>
+
+                        <div class="search-food d-flex">
+                            <a href="{{url_for('menulist')}}" class="btn"> Menu</a>
+                            <a href="#" class="btn"> Book</a>
+                        </div>
+                        <div class="social-icons d-flex">
+                            <a href="https://t.me/+IrkTmKs_09NjZDli"> <img src="{{url_for('static', filename='images/telegram.svg')}}" alt="Telegram"></a>
+                            <a href="https://www.instagram.com/mansurbek_2703/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"> <img src="{{ url_for('static', filename='images/instagram.svg')}}" alt="Instagram"></a>
+                        </div>
+
+                    </div>
+                    <div class="col-right">
+                        <img data-tilt src="{{ url_for('static', filename='images/hero-img.png')}}" alt="Home image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block title %} Ovqatlar sahifasi {% endblock %}
+
+{% block content %}
+    <section id="contact-form">
+      <div class="container">
+        <h1><span class="text-primary">KIRISHISH</span> </h1>
+        <p>ILTMOS QUYIDAGI FORMANI TO'LDIRING</p>
+
+        <form>
+          <div class="form-group">
+            <label for="ism"> ism </label>
+            <input type="text" id="name" name="name" >
+
+            <label for="familiya"> familiya </label>
+            <input id="familiya" type="text" id="fullname" name="fullname" >
+
+            <label for="login">login </label>
+            <input type="text" id="login" name="login" >
+
+            <label for="parol"> parol </label>
+            <input type="password" id="parol" name="parol" >
+          </div>
+
+          <button class="btn">YUBORISH</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact-info" class="bg-dark">
+      <div class="container">
+        <div class="box">
+          <i class="fas fa-hotel fa-3x"></i>
+
+
+        </div>
+        <div class="box">
+          <i class="fas fa-phone fa-3x"></i><br><br><br>
+          <h3>TELEFON RAQAMLAR</h3>
+          <p>
+            97 211 20 08
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-hotel fa-3x"></i>
+
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block title %}<title>Yangi hodim zakaz sahifasi</title>{% endblock %}
+{% block content %}
+{% block additional_css %}
+<link rel="stylesheet" href="/static/css/qushish.css">
+{% endblock %}
+
+    <div class="body">
+    <form method="post">
+        <div class="input">
+            <div class="label" >
+                <label > Ism kiriting: </label>
+                <input style="display: flex;justify-content:center;" class="icon" type="text" name="ism"><br>
+
+                    <label> Familiya kiriting: </label>
+                    <input style="display: flex;justify-content:center;" class="icon" type="text" name="familiya"><br>
+
+                         <label> Telefon raqam kiriting: </label>
+                            <input style="display: flex;justify-content:center;" class="icon" type="text" name="tel"><br>
+
+                            <label> Ish boshlagan sana kiriting: </label>
+                                 <input style="display: flex;justify-content:center;" class="icon" type="text" name="ish_boshlash_sana"><br>
+
+                                    <label> Bank karta raqimini kiriting: </label>
+                                        <input style="display: flex;justify-content:center;" class="icon" type="text" name="karta"><br>
+            </div>
+
+                                                    <button  type="submit"><img src="/static/img/add.png" alt="Sticker" class="icon1"></button>
+
+        </div>
+    </form>
+    </div>
+
+{% endblock %}
+
+
+
+
