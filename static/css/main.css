@@ -252,13 +252,14 @@ nav {
   margin-right: 5px;
 }
 .social-icons {
-  margin-top: 100px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   justify-content: flex-start;
 }
 .social-icons a {
-  width: 45px;
-  height: 45px;
-  border-radius: 50px;
+  width: 55px;
+  height: 55px;
+  border-radius: 40px;
   box-shadow: var(--box-shadow-main);
   display: flex;
   justify-content: center;

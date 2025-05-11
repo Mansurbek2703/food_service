@@ -30,12 +30,16 @@ def savatcha():
 
 @app.route("/addsavat/<ovqatid>/")
 def addsavat(ovqatid):
-    if session.get('username', False):
-        userid=session['username'][0]
-        soni=1
-        zakazid=6
-        obj.addsavat(userid,ovqatid,zakazid,soni)
-        return redirect(url_for('menulist'))
+    try:
+        if session.get('username', False):
+            userid = session['username'][0]
+            soni = 1
+            zakazid = 6
+            obj.addsavat(userid, ovqatid, zakazid, soni)
+    except Exception as e:
+        # Xatolik loglash (istalgan joyga yozish mumkin)
+        print(f"Xatolik yuz berdi: {e}")
+    return redirect(url_for('login'))
 
 @app.route('/zakazqushish', methods=['GET', 'POST'])
 def add():

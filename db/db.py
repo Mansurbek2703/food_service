@@ -5,10 +5,10 @@ class Database:
 
     def ulanish(self):
         return mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
-            database="foodservice",
+            host="sql8.freesqldatabase.com",
+            user="sql8778227",
+            password="SlYHPCYxXy",
+            database="sql8778227",
             port="3306"
         )
     def ishlatish(self,sql,fetchall=False, fetchone=False, commit=False):

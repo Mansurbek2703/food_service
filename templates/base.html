@@ -26,7 +26,6 @@
                         <li><a href="{{ url_for('home')}}" class="active">Home</a></li>
                         <li><a href="{{ url_for('menulist')}}">Menu</a></li>
                         <li><a href="{{ url_for('haqida')}}">about</a></li>
-                        <li><a href="#services">services</a></li>
                          {%  if session['username'] %}
                         <li class="dropdown">
                                     <button class="dropbtn">{{ session['username'][3] }}$</button>
