@@ -39,7 +39,7 @@ def addsavat(ovqatid):
     except Exception as e:
         # Xatolik loglash (istalgan joyga yozish mumkin)
         print(f"Xatolik yuz berdi: {e}")
-    return redirect(url_for('login'))
+    return redirect('/savatcha')
 
 @app.route('/zakazqushish', methods=['GET', 'POST'])
 def add():
