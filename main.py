@@ -1,12 +1,9 @@
-
+#Mansurbek Qazaqovning Individual loyihasi
 from flask import Flask , render_template, request,redirect, session, url_for
 from db.db import obj
 from datetime import date
-
 app = Flask(__name__)
-
 app.secret_key = " 12345678"
-
 @app.route("/")
 def home():
     return render_template("home.html")

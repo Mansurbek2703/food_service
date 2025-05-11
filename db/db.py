@@ -1,5 +1,4 @@
 import mysql.connector
-
 class Database:
     def __init__(self):
         self.db=None
@@ -10,9 +9,8 @@ class Database:
             user="root",
             password="root",
             database="foodservice",
-            port="3308"
+            port="3306"
         )
-
     def ishlatish(self,sql,fetchall=False, fetchone=False, commit=False):
         self.db=self.ulanish()
         cursor=self.db.cursor()
@@ -26,7 +24,6 @@ class Database:
             self.db.commit()
         self.db.close()
         return data
-
     def foodlist(self):
         sql=f"select * from food"
         return self.ishlatish(sql, fetchall=True)
